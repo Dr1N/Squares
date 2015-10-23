@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Квадрат</title>
+	<meta charset="utf8">
+	<script type="text/javascript">
+		function squareClick(event) 
+		{
+			var e = event || windows.event;
+			var square = document.getElementById('square');
+			var x = e.pageX - square.x || e.offsetX + document.documentElement.scrollLeft;
+			var y = e.pageY - square.y || e.offsetY + document.documentElement.scrollTop;
+			
+			square.setAttribute('src', 'square.php?x=' + x + '&y=' + y);
+		}
+	</script>
+</head>
+<body>
+<div align="center">
+	<img id="square" src="square.php" alt="square" onclick="squareClick(event)">
+</div>
+</body>
+</html>
